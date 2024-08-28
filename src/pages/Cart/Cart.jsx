@@ -27,6 +27,7 @@ const Cart = () => {
             <div className='cart-items-title cart-items-item' key={index} id={item.id}>
               <p> {item.name} </p>
               <p> ${item.price} </p>
+              <p>{cartItems[item._id]}</p>
               <button> Remove </button>
             </div>
           );
