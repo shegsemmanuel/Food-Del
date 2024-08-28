@@ -4,7 +4,7 @@ import { food_list } from '../../assets/assets';
 import { useContext } from 'react';
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(StoreContext);
+  const { cartItems, removeFromCart , getTotalCartAmount } = useContext(StoreContext);
 
   // Filter food_list to get only the items that are in the cart
   const itemsInCart = food_list.filter(item => cartItems[item._id]);
@@ -41,17 +41,17 @@ const Cart = () => {
               <div>
                   <div className="cart-total-details">
                     <p>Subtotal</p>
-                    <p>{0}</p>
+                    <p>${getTotalCartAmount()}</p>
                   </div>
                   <hr />
                   <div className="cart-total-details">
                     <p>Delivery Fee</p>
-                    <p>{2}</p>
+                    <p>${2}</p>
                   </div>
                   <hr />
                   <div className="cart-total-details">
                     <p>Total</p>
-                    <p>{0}</p>
+                    <p>${getTotalCartAmount()+2}</p>
                   </div>
               </div>
               <button>PROCEED TO CHECKOUT</button>
