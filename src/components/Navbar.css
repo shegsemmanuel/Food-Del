@@ -103,4 +103,7 @@
     .navbar-menu{
        display: none;
     }
+    .navbar-right > img, .navbar-right button{
+        display: none;
+    }
 }
