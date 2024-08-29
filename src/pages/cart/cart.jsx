@@ -2,12 +2,15 @@ import './cart.css';
 import { StoreContext } from '../../context/storeContext';
 import { food_list } from '../../assets/assets';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cartItems, removeFromCart , getTotalCartAmount } = useContext(StoreContext);
 
   // Filter food_list to get only the items that are in the cart
   const itemsInCart = food_list.filter(item => cartItems[item._id]);
+
+  const navigate = useNavigate();
 
   return (
     <div className='cart'>
@@ -54,7 +57,7 @@ const Cart = () => {
                     <p>${getTotalCartAmount()+2}</p>
                   </div>
               </div>
-              <button>PROCEED TO CHECKOUT</button>
+              <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
           </div>
           <div className="cart-promocode">
             <div>
