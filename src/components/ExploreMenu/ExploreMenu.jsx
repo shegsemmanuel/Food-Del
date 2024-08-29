@@ -1,10 +1,11 @@
-import  { useState } from 'react'
+/* eslint-disable react/prop-types */
+
 import './ExploreMenu.css'
 import { menu_list } from '../../assets/assets'
 
-const ExploreMenu = () => {
+const ExploreMenu = ({ category,setCategory}) => {
 
-    const [category,setCategory] = useState([]);
+
 
   return (
     <div className='explore-menu' id='explore-menu'>
